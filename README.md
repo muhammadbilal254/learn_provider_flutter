@@ -65,3 +65,9 @@ Provider Flutter ki ek official state management library hai, jo tumhare app me 
     ```
 
   - `notifyListener` call to update the UI.
+
+# ValueNotifier and ValueListenableBuilder
+
+- ye jb use hota he jhaa hm ko single page me kisi single element ko update krna hu aur uska kaam srf usi page tk hu
+- **ValueNotifier:** Ek single value ko store karta hai aur usme change hone par listeners ko notify karta hai.
+- **ValueListenableBuilder:** Ek widget hai jo ValueNotifier ki value ko listen karta hai aur jab value change hoti hai, toh widget ko rebuild karta hai.

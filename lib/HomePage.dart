@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:learn_provider/Examples/Counter/CounterPage.dart';
 import 'package:learn_provider/Examples/SliderExample/SliderPage.dart';
+import 'package:learn_provider/Examples/ThemeExample/ChangeThemePage.dart';
+import 'package:learn_provider/Examples/ValueNotifier/ValueNotifierPage.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -72,7 +74,53 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               ),
-            )
+            ),
+            Card(
+              child: ListTile(
+                onTap: () {
+                  Get.to(ChangeThemePage());
+                },
+                leading: Text(
+                  "#",
+                  style: TextStyle(
+                    fontSize: 24,
+                    color: Colors.deepPurple,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                title: Text(
+                  "Theme",
+                  style: TextStyle(
+                    fontSize: 18,
+                    color: Colors.black,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+              ),
+            ),
+            Card(
+              child: ListTile(
+                onTap: () {
+                  Get.to(ValueNotifierPage());
+                },
+                leading: Text(
+                  "#",
+                  style: TextStyle(
+                    fontSize: 24,
+                    color: Colors.deepPurple,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                title: Text(
+                  "Value Notifier Example",
+                  style: TextStyle(
+                    fontSize: 18,
+                    color: Colors.black,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
