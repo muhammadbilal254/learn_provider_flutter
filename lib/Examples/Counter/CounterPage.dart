@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:learn_provider/Provider/CounterProvider.dart';
+import 'package:provider/provider.dart';
 
-class CounterPage extends StatefulWidget {
+class CounterPage extends StatelessWidget {
   const CounterPage({super.key});
 
   @override
-  State<CounterPage> createState() => _CounterPageState();
-}
-
-class _CounterPageState extends State<CounterPage> {
-  int counter = 1;
-  @override
   Widget build(BuildContext context) {
-    print("---> UI Rebuild <---" + counter.toString());
+    final counterProvider =
+        Provider.of<CounterProvider>(context, listen: false);
+    print("---> UI Rebuild <---");
     return Scaffold(
       appBar: AppBar(
         title: Text("Counter"),
@@ -20,28 +18,31 @@ class _CounterPageState extends State<CounterPage> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text(
-            counter.toString(),
-            style: TextStyle(
-              fontSize: 78,
-              color: Theme.of(context).colorScheme.primary,
-              fontWeight: FontWeight.bold,
-            ),
+          Consumer<CounterProvider>(
+            builder: (context, value, child) {
+              print("Rebuid Widgets");
+              return Text(
+                value.counter.toString(),
+                style: TextStyle(
+                  fontSize: 78,
+                  color: Theme.of(context).colorScheme.primary,
+                  fontWeight: FontWeight.bold,
+                ),
+              );
+            },
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               ElevatedButton(
                 onPressed: () {
-                  counter--;
-                  setState(() {});
+                  counterProvider.decreaseConter();
                 },
                 child: Text("Decrease"),
               ),
               ElevatedButton(
                 onPressed: () {
-                  counter++;
-                  setState(() {});
+                  counterProvider.increaseConter();
                 },
                 child: Text("Increase"),
               ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:learn_provider/Examples/Counter/CounterPage.dart';
+import 'package:learn_provider/Examples/SliderExample/SliderPage.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -21,7 +22,7 @@ class HomePage extends StatelessWidget {
             Text(
               "Provider Examples",
               style: TextStyle(
-                fontSize: 32,
+                fontSize: 24,
                 color: Theme.of(context).colorScheme.primary,
                 fontWeight: FontWeight.bold,
               ),
@@ -41,6 +42,29 @@ class HomePage extends StatelessWidget {
                 ),
                 title: Text(
                   "Counter",
+                  style: TextStyle(
+                    fontSize: 18,
+                    color: Colors.black,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+              ),
+            ),
+            Card(
+              child: ListTile(
+                onTap: () {
+                  Get.to(SliderPage());
+                },
+                leading: Text(
+                  "#",
+                  style: TextStyle(
+                    fontSize: 24,
+                    color: Colors.deepPurple,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                title: Text(
+                  "Slider",
                   style: TextStyle(
                     fontSize: 18,
                     color: Colors.black,
