@@ -4,13 +4,13 @@ https://github.com/muhammadbilal254/learn_provider_flutter
 
 ## Important Topics:
 
-- ChangeNotifier
-- Consumer
-- ChangeNotifierProvider
-- MultiProvider
-- Listenable Provider
+- ChangeNotifier ✅
+- Consumer ✅
+- ChangeNotifierProvider ✅
+- MultiProvider ✅
+- Listenable Provider ✅
 - ChangeNotifier.dispose
-- ValueListenable
+- ValueListenable ✅
 - StreamProvider
 - FutureProvider
 - Future
